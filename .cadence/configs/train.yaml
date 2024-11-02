@@ -1,0 +1,55 @@
+project_name: Default
+working_dir: "."
+cmd:
+- python train.py
+provisioning:
+  gpu_type: a10g
+  gpu_count: 1
+  cpu_count: 32
+  ram: 128
+teamcity:
+  url: https://mlops.staging.sandbox.teamcity.aws.intellij.net
+  build_conf_id: C017f76f82d44c31b2ccCdc2c73fc4a5_JetTrain
+env:
+  variables:
+    PYTHONUNBUFFERED: "1"
+  python:
+    pip:
+      requirements_path: requirements.txt
+    version: 3.11.10
+  secrets:
+    variables: {}
+    ssh_keys: []
+  aws:
+    sync_config: false
+    sync_credentials: false
+    sync_cache: false
+project_sync:
+  local:
+    root: "."
+    storage_name: Cadence Storage
+    uri: ""
+    exclude: []
+    include: []
+    sync_back: false
+    snapshots: true
+    storage_type: DEFAULT
+inputs: []
+outputs:
+- type: OUTPUT
+  storage_name: Cadence Storage
+  uri: ""
+  path: "."
+  acceleration: false
+  storage_type: DEFAULT
+mounts: []
+storages:
+- name: Cadence Storage
+  storage_type: s3
+  credentials:
+    access_key_id: ASIASYCYVCDCWKZRICRD
+    secret_access_key: Y1eqPhFmjghRo8JjEwCRfR5xOSj8NJZ5k0SJnBB0
+    session_token: IQoJb3JpZ2luX2VjEEQaCWV1LXdlc3QtMSJGMEQCID02Op8+4D4mDr8x+j//oOwVIzXqP26Cm4DI3999SyboAiA8iIZitbK40fH9E+tRmzMznOFZg1lXvg0ew1ohnvp3vSq5BQi9//////////8BEAEaDDE4OTE2NDQ5MDk0OSIM7JZ5xLWoaVWtLkmpKo0FOv7IZuUcAAQhzl3g/fP9OtKs5r4ep3yf9frAIbfaxeROvbwLGROLP3xWdunOelLeaLmSsoexFF6ptgriWtJx1PpPnamutnf45lZJFNiMuKvP8/XAt1sDMd1v8IM+zTTrUpWjtfphFTrOrJg9g+d2d2NnFtw5X38QWvSY9VBZDikN+ihFW2yb7+h/Fs6AzfRm5EnoIyP+PH9YM9md5ABrjQqdeR1z+0fzSmtEYAqviXm9uHGGWZf3cCHe918wQf7C0E4gAiK8GZucwsWfwY1u7W/b4xs+8sWXivU7HM5wgNEAwrCAPXltkIyLw8fAhaVmHTlbdxilqkLuLaLQHBfkI9pGZeDCm0S11Zz/v8DU3WdqCutF6NOKTKPU1yI92xwJjJ+EbyLeR4Mf8Hj4wDQrcFFy5idWrwkfamCX988E5tvjYf8PfHcTqqzy48giMIvvh4HHmKMgvWD58N/gXD6Wjd8GGLxZe5/FDa55rJJNV+Z0MNSmhG5YlVoCBYqS8HoLSSKqNpqIY+XP5dQDkvamBvY/OfnE9xH1D3H5riXYrCDUk/KNtjm38jIIv1Ww2RJC3kOIJqJVeXt4G5k6RHSFt4GSuOfRctvY7hHHJTqEjHjUM2NoMeudlpef0uJSuNRV9LjJ2j8ZrKy1spcP775l2wUYCD0AQ2efWNlAUAAwdiM8H3AC9qWk6oHDUzs9nEhWah34pEYde3CCExkOi+eU0hAqAth9slUqF+BrPJ2DomWZgyS39PnP+DXq4oXZHimyhwHxbT1JcvjCjjEw4a3RCfWxCEATjF+4dI4PDY8zxBU/2b0T6/YbZ694+UUTj/BqB+Wi86iLos0KoLbSvBUuIzXswrsnn43br0Onws8w5aiYuQY6hgJdmsn0XCbMewrx4gboj+qmh6BHlJQKl+uSTWae0CTz20Go1I6FUq6Mk0sPgtKvzYXd7Uo0i49XhMQFV9d2NBhv6ziTnsDk7UaAtIXfzgPpi+AZDVnQ77VupyZ0Krd++RxSPMJx8MXw9sFqJpv9ItRd9WhtYQ81LLE+Byab8QuXiunSjMFT3vAyjbuxAbZ89/xhclb5G9nGo9XI19JLAcj4cQTkaZDF4J9iWngLFP/mTG5BS4OEWvfQZEXxCK3oDdpHiJgYE3rJv2G2LUx9obT8qxCSlSPnm0OUOWiiYxHjOKdi7dt9as7HoX+8Cq70HcDqpMq62MbGlBkVicP7Kg573BUrATAg
+    bucket: jb-cadence-storage
+    type: DEFAULT
+description: ""
